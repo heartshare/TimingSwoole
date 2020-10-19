@@ -1,1 +1,2 @@
-php /swoole/html/TimingSwoole/xyzserver.php
+php /swoole/html/TimingSwoole/xyzserver.
+tail -f /dev/null
