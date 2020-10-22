@@ -3,11 +3,11 @@ FROM php:7.3-alpine3.8
 WORKDIR /swoole/html
 RUN echo http://mirrors.ustc.edu.cn/alpine/v3.7/main > /etc/apk/repositories \
 	&& echo http://mirrors.ustc.edu.cn/alpine/v3.7/community >> /etc/apk/repositories \
-    && apk --no-cache add git autoconf gcc g++ make openssl openssl-dev \
-    && pecl install swoole \
-	&& docker-php-ext-enable swoole
-RUN git clone https://github.com/zyx7017/TimingSwoole.git 
-RUN chmod -R 777 /swoole/html 
+	&& apk --no-cache add git autoconf gcc g++ make openssl openssl-dev \
+	&& pecl install swoole \
+	&& docker-php-ext-enable swoole \
+	&& git clone https://github.com/zyx7017/TimingSwoole.git \
+	&& chmod -R 777 /swoole/html 
 WORKDIR /swoole/html/TimingSwoole
 	ENTRYPOINT ["/bin/ash","./.start.sh", "-g", "daemon off;"]
 	EXPOSE 7017
