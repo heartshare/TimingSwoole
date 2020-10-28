@@ -8,6 +8,11 @@ class TimeData
     private function __clone(){}
     private static $instance;
     private $timeData;
+/**
+ *
+ * @return Class
+ * 
+ */
     public static function getInstance()
     {
         if(!self::$instance instanceof self){
@@ -40,7 +45,7 @@ class TimeData
  *
  * @param Int $index 数据的索引
  * @param string $key 数据的key
- * 
+ * @return string
  */
     public function getIndexData($index, $key)
     {
@@ -58,7 +63,7 @@ class TimeData
 /**
  *
  * @param Int $index 数据的索引
- * 
+ * @return array
  */
     public function getData($index)
     {
@@ -74,7 +79,7 @@ class TimeData
  *
  * @param Int $page 当前页面
  * @param Int $number 页面显示多少条数据
- * 
+ * @return array
  */
     public function getPageData($page = '1', $number = "1")
     {
